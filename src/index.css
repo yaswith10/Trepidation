@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    body{
+        overflow: hidden;
+        background-color: black;
+    }
+    /* utility classes */
+    #home{
+        transition: 3s;
+    }
+    .melted-monster{
+        font-family: 'melted-monster'; 
+    }
+    .animation-1{
+        animation-name: animation-1;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+    .disappear{
+        animation-name: disappear;
+        animation-duration: 3s;
+        animation-iteration-count: 1;
+    }
+    @font-face {
+        font-family: 'melted-monster';
+        src: url('/melted_monster/Melted Monster.ttf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    .transition-1{
+        transition: 0.5s ease-in-out;
+    }
+    .transition-1:hover{
+        box-shadow: 4px 3rem 10rem 1rem rgb(102, 0, 0);
+    }
+    @keyframes animation-1 {
+        0%{
+            text-shadow: 0 0 10rem rgb(255, 0, 0),0 0 1rem rgb(191, 0, 0)
+        }
+        10%{
+            text-shadow: none;
+        }
+        11%{
+            text-shadow: 0 0 10rem rgb(255, 0, 0),0 0 1rem rgb(191, 0, 0)
+        }
+        100%{
+            text-shadow: none;
+        }
+    }
+    @keyframes disappear{
+        0%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+    /* game page */
+    #game-page{
+        height: 100vh;
+        width: 100vw;
+        background-color: black;
+    }
+    #hero{
+        transition: 8s ease-out,3s ease-out box-shadow;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        box-shadow: rgb(255, 255, 255);
+        background: url('./hero.jpeg') no-repeat center center/cover;
+        z-index: 0;
+    }
+    .monster{
+        z-index: 0;
+        background: url('./ghost.png') no-repeat center center/cover;
+        mix-blend-mode: multiply;
+        position: absolute;
+        height: 200px;
+        width: 200px;
+    }
+    .bloodstains{
+        z-index: 0;
+        background: url('./bloodstains.png') no-repeat center center/cover;
+        mix-blend-mode: multiply;
+        height: 150px;
+        width: 150px;
+    }
+    .ghost-bg{
+        background: url('./ghost.png') no-repeat center center/cover;
+        z-index: -1;
+        height: 100vh;
+        width: 50vw;
+        margin: auto;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 27vw;
+        animation-name: ghostscare;
+        animation-iteration-count: infinite;
+        animation-duration: 3s;
+    }
+    @keyframes ghostscare{
+        0%{
+            opacity: 0;
+            z-index: -1;
+        }
+        79%{
+            opacity: 0;
+            z-index: -1;
+        }
+        80%{
+            opacity: 1;
+            z-index: 1;
+        }
+        81%{
+            opacity: 0;
+            z-index: -1;
+        }
+        82%{
+            opacity: 1;
+            z-index: 1;
+        }
+        83%{
+            opacity: 0;
+            z-index: -1;
+        }
+        100%{
+            opacity: 0;
+            z-index: -1;
+        }
+        
+    }
+    #green-arrow{
+        position: absolute;
+        right: 10px;
+        top: 260px;
+        background: url('./greenarrow-removebg-preview.png') no-repeat center center/cover ;
+        height: 100px;
+        width: 100px;
+        z-index: 0;
+        mix-blend-mode: multiply;
+
+    }
+    @keyframes ghostbottomtoup {
+        0%{
+            transform: translateY(0vh);
+            position: absolute;
+            display: inline-block;
+        }
+        99%{
+            transform: translateY(100vh);
+            position: absolute;
+            display: inline-block;
+        }
+        100%{
+            display: none;
+        }
+    }
+    @keyframes ghostuptobottom {
+        0%{
+            transform: translateY(0vh);
+            position: absolute;
+            display: inline-block;
+        }
+        99%{
+            transform: translateY(-100vh);
+            position: absolute;
+            display: inline-block;
+        }
+        100%{
+            display: none;
+        }
+    }
+    .box{
+       margin: 4rem auto;
+       width: 200px;
+       padding: 1rem;
+       color: white;
+       text-align: center;
+       background-color: red;
+       transition: 1s;
+       border-radius: 5px;
+       cursor: pointer;
+    }
+    .box:hover{
+        background-color: rgb(132, 0, 0);
+    }
+    #alert{
+        transition: 2s;
+    }
+    
+}
