@@ -2,7 +2,7 @@
   "name": "milan-game-jam",
   "private": true,
   "version": "0.0.0",
-  "homepage": ".",
+  "homepage": "https://yaswith10.github.io/Trepidation/",
   "type": "module",
   "scripts": {
     "dev": "vite",
